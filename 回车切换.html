@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text"/><br/>
+		<input type="text"/><br/>
+		<input type="text"/><br/>
+		<input type="text"/><br/>
+		<input type="text"/><br/>
+		<input type="text"/><br/>
+	<script>
+	//需求：在当前文本框中按下回车键 获取下一个文本框 并让其获取焦点
+	var inputs = document.getElementsByTagName("input");
+	for (var i = 0; i < inputs.length; i++) {
+	inputs[i].onkeyup = function (event) {
+	//console.log(event.keyCode);//13
+	if (event.keyCode === 13) {
+	var next = this.nextElementSibling.nextElementSibling;//找到下一个文本框
+	//让他获取焦点
+	next.focus();
+	}
+	};
+	}
+	</script>
+	</body>
+</html>
